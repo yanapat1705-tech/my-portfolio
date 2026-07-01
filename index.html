@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
-    <title>My Portfolio</title>
     <meta charset="UTF-8">
-      <style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -17,16 +18,18 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
-        .card {
-            background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            padding: 40px;
-            max-width: 600px;
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1100px;
             width: 100%;
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
             animation: fadeIn 0.8s ease-in-out;
         }
 
@@ -35,20 +38,33 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        h1 {
-            text-align: center;
-            font-size: 1.8em;
-            color: #4a2f7a;
-            margin-bottom: 25px;
-            line-height: 1.4;
+        /* ฝั่งซ้าย: ข้อความ */
+        .info-section {
+            flex: 1;
+            min-width: 320px;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        h2 {
-            color: #764ba2;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 8px;
-            margin-bottom: 20px;
-            font-size: 1.3em;
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            width: fit-content;
+        }
+
+        h1 {
+            font-size: 1.9em;
+            color: #4a2f7a;
+            margin-bottom: 30px;
+            line-height: 1.5;
         }
 
         ul {
@@ -57,36 +73,79 @@
 
         ul li {
             background: #f5f3ff;
-            margin-bottom: 12px;
-            padding: 14px 18px;
-            border-radius: 12px;
+            margin-bottom: 14px;
+            padding: 16px 20px;
+            border-radius: 14px;
             border-left: 5px solid #764ba2;
             font-size: 1.05em;
             color: #333;
-            transition: transform 0.2s ease, background 0.2s ease;
+            transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
         }
 
         ul li:hover {
-            transform: translateX(5px);
+            transform: translateX(6px);
             background: #ece7fb;
+            box-shadow: 0 4px 12px rgba(118, 75, 162, 0.2);
         }
 
         .footer-line {
-            text-align: center;
-            margin-top: 25px;
-            font-size: 0.9em;
+            margin-top: 30px;
+            font-size: 0.85em;
             color: #999;
+        }
+
+        /* ฝั่งขวา: รูปภาพ */
+        .photo-section {
+            flex: 1;
+            min-width: 320px;
+            position: relative;
+        }
+
+        .photo-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            min-height: 400px;
+        }
+
+        .photo-section::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: linear-gradient(to top, rgba(74, 47, 122, 0.5), transparent);
+            pointer-events: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            .container {
+                flex-direction: column-reverse;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>👩‍🏫 ยินดีต้อนรับสู่ประวัติส่วนตัว ญาณพัฒน์ ตันวิรัช ✨</h1>
-    <h2>ข้อมูลส่วนตัว 🚹</h2>
-    <ul>
-        <li>ชื่อ - นามสกุล : ญาณพัฒน์ ตันวิรัช 📵</li>
-        <li>ระดับชั้น / สาขางานที่กำลังศึกษา : ปวช.3 / สาขา เทคโนโลยีสารสนเทศ 🖥</li>
-        <li>คติประจำใจ : เหนือฟ้ายังมีแดด เหนือแปดยังมีเก้า 💯♦</li>
-        <img width="600" height="500" alt="{D4D8A5FF-E187-44C9-AB14-858A0805FCC0}" src="https://github.com/user-attachments/assets/82e7652a-5817-4561-bdb4-854937565bea" />
-    </ul>
+    <div class="container">
+        <div class="info-section">
+            <span class="badge">✨ PORTFOLIO</span>
+            <h1>👩‍🏫 ยินดีต้อนรับสู่ประวัติส่วนตัว<br>ญาณพัฒน์ ตันวิรัช</h1>
+            <ul>
+                <li>👤 ชื่อ - นามสกุล : ญาณพัฒน์ ตันวิรัช</li>
+                <li>🎓 ระดับชั้น / สาขา : ปวช.3 / เทคโนโลยีสารสนเทศ</li>
+                <li>💬 คติประจำใจ : เหนือฟ้ายังมีแดด เหนือแปดยังมีเก้า 💯</li>
+            </ul>
+            <p class="footer-line">© 2026 Portfolio Page</p>
+        </div>
+        <div class="photo-section">
+            <img width="600" height="500" alt="{D4D8A5FF-E187-44C9-AB14-858A0805FCC0}" src="https://github.com/user-attachments/assets/82e7652a-5817-4561-bdb4-854937565bea" />
+        </div>
+    </div>
 </body>
 </html>
