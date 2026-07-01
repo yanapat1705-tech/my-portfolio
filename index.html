@@ -3,6 +3,81 @@
 <head>
     <title>My Portfolio</title>
     <meta charset="UTF-8">
+      <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Tahoma', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.8em;
+            color: #4a2f7a;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        h2 {
+            color: #764ba2;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            background: #f5f3ff;
+            margin-bottom: 12px;
+            padding: 14px 18px;
+            border-radius: 12px;
+            border-left: 5px solid #764ba2;
+            font-size: 1.05em;
+            color: #333;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        ul li:hover {
+            transform: translateX(5px);
+            background: #ece7fb;
+        }
+
+        .footer-line {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 0.9em;
+            color: #999;
+        }
+    </style>
 </head>
 <body>
     <h1>👩‍🏫 ยินดีต้อนรับสู่ประวัติส่วนตัว ญาณพัฒน์ ตันวิรัช ✨</h1>
