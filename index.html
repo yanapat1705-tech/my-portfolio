@@ -14,22 +14,23 @@
         body {
             font-family: 'Segoe UI', 'Tahoma', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             padding: 40px 20px;
         }
 
         .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
             display: flex;
             flex-wrap: wrap;
-            max-width: 1100px;
-            width: 100%;
             background: rgba(255, 255, 255, 0.97);
             border-radius: 24px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
             overflow: hidden;
+            margin-bottom: 30px;
             animation: fadeIn 0.8s ease-in-out;
         }
 
@@ -38,7 +39,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ฝั่งซ้าย: ข้อความ */
         .info-section {
             flex: 1;
             min-width: 320px;
@@ -94,7 +94,6 @@
             color: #999;
         }
 
-        /* ฝั่งขวา: รูปภาพ */
         .photo-section {
             flex: 1;
             min-width: 320px;
@@ -120,9 +119,134 @@
             pointer-events: none;
         }
 
+        /* ===== Section Card (Skills, Project, Contact) ===== */
+        .section-card {
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 24px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            margin-bottom: 30px;
+            animation: fadeIn 0.9s ease-in-out;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #4a2f7a;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: "";
+            width: 6px;
+            height: 24px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 4px;
+        }
+
+        /* Skills */
+        .skill-group {
+            margin-bottom: 20px;
+        }
+
+        .skill-label {
+            font-weight: bold;
+            color: #764ba2;
+            margin-bottom: 12px;
+            font-size: 1em;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #f5f3ff;
+            border: 1.5px solid #764ba2;
+            color: #4a2f7a;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.95em;
+            font-weight: 600;
+            transition: all 0.25s ease;
+        }
+
+        .tag:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Project */
+        .project-box {
+            background: #f5f3ff;
+            border-radius: 16px;
+            padding: 25px;
+            border-left: 5px solid #764ba2;
+        }
+
+        .project-box h3 {
+            color: #4a2f7a;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .project-box p {
+            margin-bottom: 12px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .project-box p strong {
+            color: #764ba2;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .contact-item {
+            background: #f5f3ff;
+            padding: 18px 20px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: transform 0.25s ease, background 0.25s ease;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-4px);
+            background: #ece7fb;
+            box-shadow: 0 6px 15px rgba(118, 75, 162, 0.2);
+        }
+
+        .contact-icon {
+            font-size: 1.6em;
+        }
+
+        .contact-text .label {
+            font-size: 0.8em;
+            color: #999;
+        }
+
+        .contact-text .value {
+            font-weight: 600;
+            color: #4a2f7a;
+        }
+
         /* Responsive */
         @media (max-width: 700px) {
-            .container {
+            .hero {
                 flex-direction: column-reverse;
             }
             h1 {
@@ -133,19 +257,69 @@
 </head>
 <body>
     <div class="container">
-        <div class="info-section">
-            <span class="badge">✨ PORTFOLIO</span>
-            <h1>👩‍🏫 ยินดีต้อนรับสู่ประวัติส่วนตัว<br>ญาณพัฒน์ ตันวิรัช</h1>
-            <ul>
-                <li>👤 ชื่อ - นามสกุล : ญาณพัฒน์ ตันวิรัช</li>
-                <li>🎓 ระดับชั้น / สาขา : ปวช.3 / เทคโนโลยีสารสนเทศ</li>
-                <li>💬 คติประจำใจ : เหนือฟ้ายังมีแดด เหนือแปดยังมีเก้า 💯</li>
-            </ul>
-            <p class="footer-line">© 2026 Portfolio Page</p>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="info-section">
+                <span class="badge">✨ PORTFOLIO</span>
+                <h1>👩‍🏫 ยินดีต้อนรับสู่ประวัติส่วนตัว<br>ญาณพัฒน์ ตันวิรัช</h1>
+                <ul>
+                    <li>👤 ชื่อ - นามสกุล : ญาณพัฒน์ ตันวิรัช</li>
+                    <li>🎓 ระดับชั้น / สาขา : ปวช.3 / เทคโนโลยีสารสนเทศ</li>
+                    <li>💬 คติประจำใจ : เหนือฟ้ายังมีแดด เหนือแปดยังมีเก้า 💯</li>
+                </ul>
+                <p class="footer-line">© 2026 Portfolio Page</p>
+            </div>
+            <div class="photo-section">
+                <img src="images/profile.jpg" alt="รูปโปรไฟล์ ญาณพัฒน์ ตันวิรัช">
+            </div>
         </div>
-        <div class="photo-section">
-            <img width="600" height="500" alt="{D4D8A5FF-E187-44C9-AB14-858A0805FCC0}" src="https://github.com/user-attachments/assets/82e7652a-5817-4561-bdb4-854937565bea" />
+
+        <!-- Skills Section -->
+        <div class="section-card">
+            <div class="section-title">🏆 ทักษะความสามารถ</div>
+            <div class="skill-group">
+                <div class="skill-label">📈 โปรแกรมคอมพิวเตอร์ที่ใช้งานเป็น</div>
+                <div class="tags">
+                    <span class="tag">Figma</span>
+                    <span class="tag">Word</span>
+                    <span class="tag">Excel</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-label">💻 ภาษาโปรแกรมคอมพิวเตอร์ที่ใช้งานเป็น</div>
+                <div class="tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">PHP</span>
+                    <span class="tag">Python</span>
+                </div>
+            </div>
         </div>
-    </div>
-</body>
-</html>
+
+        <!-- Project Section -->
+        <div class="section-card">
+            <div class="section-title">📕 โปรเจคของผม</div>
+            <div class="project-box">
+                <h3>🌐 ระบบสั่งอาหารร้านมีนามีข้าว</h3>
+                <p><strong>รายละเอียด :</strong> ระบบคิวอาร์โค้ดสั่งอาหารของร้านอาหาร ให้ลูกค้าแสกนสั่งอาหารได้เอง</p>
+                <p><strong>เหตุผลที่เลือกทำโปรเจค :</strong> 🍜 เพื่อทำระบบสั่งอาหารให้ร้านอาหาร เพิ่มความสะดวกสบายแก่ลูกค้า และแก้ปัญหาความล่าช้าในการสั่งอาหาร</p>
+                <p><strong>หน้าที่หลักของผมในการทำโปรเจค :</strong> 📄 เขียนโค้ดระบบขึ้นมา และซัพพอร์ตระบบเก็บข้อมูล</p>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="section-card">
+            <div class="section-title">📞 ช่องทางการติดต่อ</div>
+            <div class="contact-grid">
+                <a href="mailto:Yanapat1705@Gmail.com" class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <div class="contact-text">
+                        <div class="label">Gmail</div>
+                        <div class="value">Yanapat1705@Gmail.com</div>
+                    </div>
+                </a>
+                <a href="https://instagram.com/Y4nxp4t._" target="_blank" class="contact-item">
+                    <span class="contact-icon">📸</span>
+                    <div class="contact-text">
+                        <div class="label">Instagram</div>
